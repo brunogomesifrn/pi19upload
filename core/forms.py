@@ -4,4 +4,4 @@ from .models import Doc
 class DocForm(ModelForm):
 	class Meta():
 		model = Doc
-		fields = ['nome', 'data', 'arquivo', 'local']
+		fields = ['nome', 'data', 'arquivo', 'local', 'remetente']
