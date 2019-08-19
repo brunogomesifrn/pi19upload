@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Henrique.urls'
+ROOT_URLCONF = 'pi19upload.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Henrique.wsgi.application'
+WSGI_APPLICATION = 'pi19upload.wsgi.application'
 
 
 # Database
