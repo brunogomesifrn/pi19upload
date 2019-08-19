@@ -1,4 +1,4 @@
-"""pi19upload URL Configuration
+"""Henrique URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,7 +15,34 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import listar, cadastro, deletar, atualizar
+from django.conf import settings
+from django.conf.urls.static import static
+
+#OUTRA COISA
+from core.views import index, perfil, registro, dados
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    path('doc/', listar, name='doc'),
+    path('cadastro/', cadastro, name='cadastro'),
+    path('atualizar/<int:id>/', atualizar, name='atualizar'),
+    path('deletar/<int:id>/', deletar, name='deletar'),
     path('admin/', admin.site.urls),
-]
+
+    #OUTRA COISA
+    path('', index, name='index'),
+
+    #Perfil
+    path('perfil/', perfil, name='perfil'),
+
+    #Registro de usuário
+    path('registro/', registro, name='registro'),
+    path('dados/<int:id>/', dados, name='dados'),
+
+    #Autentificação
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path("logout/", auth_views.LogoutView.as_view(),
+    name="logout"),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
