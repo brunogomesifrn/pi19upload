@@ -30,7 +30,7 @@ def atualizar(request, id):
 	form = DocForm(request.POST or None, request.FILES or None, instance=doc)
 	if form.is_valid():
 		form.save()
-		return redirect('festival')
+		return redirect('atualizar')
 	contexto = {
 		'form': form
 	}

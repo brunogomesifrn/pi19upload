@@ -44,6 +44,7 @@
                   <th scope="col">Data</th>
                   <th scope="col">Arquivo </th>
                   <th scope="col">Local Físico </th>
+                  <th scope="col">Remetente</th>
                   <th scope="col">Gerenciar</th>
                 </tr>
               </thead>
@@ -56,6 +57,7 @@
                   <td class="bg-info">{{ docs.data }}</td>
                   <td class="bg-info"><p> <img src="/media/{{docs.arquivo}}" alt="arquivo" width="100px" height="100px"/></td>
                   <td class="bg-info">{{ docs.local }}</td>
+                   <th scope="row" class="bg-info">{{ docs.remetente }}</th>
                   <td>
                       <a href="{% url 'atualizar' docs.id %}"><button type="button" class="btn btn-info">Editar</button></a>
                       <a href="{% url 'deletar' docs.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
