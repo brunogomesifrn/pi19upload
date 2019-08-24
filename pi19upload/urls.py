@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import listar, cadastro, deletar, atualizar
+from core.views import publicos_listar, publico_cadastrar, publico_atualizar, publico_deletar
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,11 +25,19 @@ from core.views import index, perfil, registro, dados
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    #Documentos
     path('doc/', listar, name='doc'),
     path('cadastro/', cadastro, name='cadastro'),
     path('atualizar/<int:id>/', atualizar, name='atualizar'),
     path('deletar/<int:id>/', deletar, name='deletar'),
     path('admin/', admin.site.urls),
+
+    #Publicos
+    path('publicos/', publicos_listar, name='publicos'),
+    path('publico_cadastrar/', publico_cadastrar, name='publico_cadastrar'),
+    path('publico_atualizar/<int:id>/', publico_atualizar, name='publico_atualizar'),
+    path('publico_deletar/<int:id>/', publico_deletar, name='publico_deletar'),
+
 
     #OUTRA COISA
     path('', index, name='index'),

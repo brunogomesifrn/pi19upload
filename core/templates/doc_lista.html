@@ -36,13 +36,14 @@
           <p><a href="{% url 'cadastro' %}"><button type="button" class="btn btn-danger" style="width: 230px; height: 70px">Cadastrar Doc </button></a>
           <a href="{% url 'perfil' %}"><button type="button" class="btn btn-info" style="width: 230px; height: 70px">Perfil </button></a></p>
           <br />
-
+      
             <table class="table">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">Nome</th>
                   <th scope="col">Data</th>
                   <th scope="col">Arquivo </th>
+                  <th scope="col">Tipo</th>
                   <th scope="col">Local Físico </th>
                   <th scope="col">Remetente</th>
                   <th scope="col">Gerenciar</th>
@@ -56,6 +57,7 @@
                   <th scope="row" class="bg-info">{{ docs.nome }}</th>
                   <td class="bg-info">{{ docs.data }}</td>
                   <td class="bg-info"><p> <img src="/media/{{docs.arquivo}}" alt="arquivo" width="100px" height="100px"/></td>
+                  <td class="bg-info">{{ docs.tipo }}</td>
                   <td class="bg-info">{{ docs.local }}</td>
                    <th scope="row" class="bg-info">{{ docs.remetente }}</th>
                   <td>

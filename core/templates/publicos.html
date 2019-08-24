@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1> Gerenciar Públicos</h1>
+<p><a href="{% url 'publico_cadastrar' %}"> Cadastrar públicos</a></p>
+
+<p>Públicos cadastrados</p>
+{% for tipo in  tipo_listar %}
+<p>{{ tipo.nome }}
+	|<a href="{% url 'publico_atualizar' tipo.id %}">EDITAR</a>
+	|<a href="{% url 'publico_deletar' tipo.id %}">EXCLUIR</a>
+</p>
+{% empty %}
+<p>Não há tipos cadastrados</p>
+{% endfor %}
+</body>
+</html>

@@ -68,14 +68,21 @@
             <div class="controls">
             <h4 class="corr">{{form.remetente.label}}: {{ form.remetente }}</h4>
             </div>
-          </div>
-
+          <div class="control-group form-group">
+            <div class="controls">
+            <h4 class="corr">Tipo de documento: {{ form.tipo }} <a href="{% url 'publicos' %}"><button type="button" class="btn btn-info" style="width: 100px; height: 40px">Cadastrar </button></a></p>
           <br />
-          <button type="submit" class="btn btn-primary" id="sendMessageButton" style="width: 230px; height: 70px">Salvar</button>
-    
+            </h4>
+            </div>
+        
+
+          <button type="submit" class="btn btn-primary" id="sendMessageButton" style="width: 220px; height: 60px">Salvar</button>
+      
+        </div>
         </form>
+
          <br />
-           <a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 150px; height: 50px">Voltar</button></a>
+           <a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 140px; height: 40px">Voltar</button></a>
       </div>
     </div>
     <!-- /.row -->
