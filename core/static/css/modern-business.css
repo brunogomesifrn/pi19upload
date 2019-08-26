@@ -30,13 +30,18 @@ body {
 .corr{
   color: black;
   font-weight: bolder;
-<<<<<<< HEAD
+
 }
 .titulo{
   color: black;
   font-weight: bold;
+  background-color: #B0E0E6;
+  padding-top: 30px;
+  height: 15vh;
+  text-align: center;
+
+
+  
 
 }
-=======
->>>>>>> 5d006d484b16c29b2e67d2db7b8c3127478536dd
 
