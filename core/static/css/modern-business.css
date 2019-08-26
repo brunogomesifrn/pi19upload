@@ -29,6 +29,11 @@ body {
 
 .corr{
   color: black;
-  font-weight: bolder
+  font-weight: bolder;
+}
+.titulo{
+  color: black;
+  font-weight: bold;
+
 }
 
