@@ -41,40 +41,40 @@ def deletar(request, id):
 	doc.delete()
 	return redirect('doc')
 
-# PUBLICOS
-def publicos_listar(request):
+#Tipo
+def tipo_listar(request):
 	tipo = Tipo.objects.all()
 	contexto = {
 		'tipo_listar': tipo
 	}
-	return render(request, 'publicos.html', contexto)
+	return render(request, 'tipo.html', contexto)
 
-def publico_cadastrar(request):
+def tipo_cadastrar(request):
 	form = 	TipoForm(request.POST or None)
 	if form.is_valid():
 		form.save()
-		return redirect('publicos')
+		return redirect('tipo')
 
 	contexto = {
 		'form': form
 	}
-	return render(request, 'publicos_cadastro.html', contexto)
+	return render(request, 'tipo_cadastro.html', contexto)
 
-def publico_atualizar(request, id):
+def tipo_atualizar(request, id):
 	tipo = Tipo.objects.get(pk=id)
 	form = TipoForm(request.POST or None, instance=tipo)
 	if form.is_valid():
 		form.save()
-		return redirect('publicos')
+		return redirect('tipo')
 	contexto = {
 		'form': form
 	}
-	return render(request, 'publicos_cadastro.html', contexto)
+	return render(request, 'tipo_cadastro.html', contexto)
 
-def publico_deletar(request, id):
+def tipo_deletar(request, id):
 	tipo = Tipo.objects.get(pk=id)
 	tipo.delete()
-	return redirect('publicos')
+	return redirect('tipo')
 
 #OUTRA COISA
 

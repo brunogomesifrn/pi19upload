@@ -28,15 +28,17 @@
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
+<<<<<<< HEAD
     <h1 class="titulo">Cadastros de Documentos Online</h1>
+=======
+    <h1 class="corr">Cadastro de Documentos Online</h1>
+>>>>>>> 5d006d484b16c29b2e67d2db7b8c3127478536dd
 
    <hr />
 
     <!-- Content Row -->
     <div class="row">
       <div class="col-lg-12 mb-12">
-
-      <h3 class="corr">Cadastro:</h3>
           
         <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
@@ -49,7 +51,7 @@
 
           <div class="control-group form-group">
             <div class="controls">
-            <h4 class="corr">{{form.data.label}}: {{ form.data }}</h4>
+           <h4 class="corr">{{form.data.label}}: {{ form.data }}</h4>
             </div>
           </div>
 
@@ -70,13 +72,13 @@
             </div>
           <div class="control-group form-group">
             <div class="controls">
-            <h4 class="corr">Tipo de documento: {{ form.tipo }} <a href="{% url 'publicos' %}"><button type="button" class="btn btn-info" style="width: 100px; height: 40px">Cadastrar </button></a></p>
+            <h4 class="corr">Tipo de documento: {{ form.tipo }} <a href="{% url 'tipo' %}"><button type="button" class="btn btn-info" style="width: 100px; height: 40px">Cadastrar </button></a></p>
           <br />
             </h4>
             </div>
         
 
-          <button type="submit" class="btn btn-primary" id="sendMessageButton" style="width: 220px; height: 60px">Salvar</button>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton" style="width: 140px; height: 40px">Salvar</button>
       
         </div>
         </form>
