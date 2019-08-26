@@ -1,20 +1,59 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="en">
 <head>
-	<title></title>
-</head>
-<body>
-<h1> Gerenciar Públicos</h1>
-<p><a href="{% url 'tipo_cadastrar' %}"> Cadastrar públicos</a></p>
 
-<p>Públicos cadastrados</p>
-{% for tipo in  tipo_listar %}
-<p>{{ tipo.nome }}
-	|<a href="{% url 'tipo_atualizar' tipo.id %}">EDITAR</a>
-	|<a href="{% url 'tipo_deletar' tipo.id %}">EXCLUIR</a>
-</p>
-{% empty %}
-<p>Não há tipos cadastrados</p>
-{% endfor %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Lista de tipos</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+<div class="row">
+<div class="col-lg-12 mb-12">
+
+<h1> Gerenciar Categoria</h1>
+<p><a href="{% url 'tipo_cadastrar' %}"><button type="button" class="btn btn-danger"> Cadastrar Categoria</button></a></p>
+
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Tipos de documentos cadastrados</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+              {% for tipo in tipo_listar %}
+                <tr>
+                  <th scope="row" class="bg-light">{{ tipo.nome }}</th>
+                  <td>
+                      <a href="{% url 'tipo_atualizar' tipo.id %}"><button type="button" class="btn btn-info">Editar</button></a>
+                      <a href="{% url 'tipo_deletar' tipo.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
+                  </td>
+                </tr>
+              {% empty %}
+              <p>Não há nehum tipo cadastrado!</p>
+              {%endfor%}
+
+              </tbody>
+
+            </table>
+</div>
+</div>
+</div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
 </body>
 </html>
