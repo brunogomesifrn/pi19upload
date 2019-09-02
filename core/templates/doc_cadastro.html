@@ -45,6 +45,7 @@
             <div class="controls">
               <h4 class="corr">{{form.nome.label}}: {{ form.nome }}</h4>
             </div>
+            <div> <h4></h4></div>
           </div>
 
           <div class="control-group form-group">
@@ -68,6 +69,7 @@
             <div class="controls">
             <h4 class="corr">{{form.remetente.label}}: {{ form.remetente }}</h4>
             </div>
+
           <div class="control-group form-group">
             <div class="controls">
             <h4 class="corr">Tipo de documento: {{ form.tipo }} <a href="{% url 'tipo' %}"><button type="button" class="btn btn-info" style="width: 100px; height: 40px">Cadastrar </button></a></p>
@@ -75,14 +77,13 @@
             </h4>
             </div>
         
-
+          <a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 140px; height: 40px">Voltar</button></a>
+          
           <button type="submit" class="btn btn-primary" id="sendMessageButton" style="width: 140px; height: 40px">Salvar</button>
-      
+
         </div>
         </form>
-
-         <br />
-           <a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 140px; height: 40px">Voltar</button></a>
+    
       </div>
     </div>
     <!-- /.row -->
