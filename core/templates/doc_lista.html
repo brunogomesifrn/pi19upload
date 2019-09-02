@@ -62,7 +62,11 @@
                    <th scope="row" class="bg-info">{{ docs.remetente }}</th>
                   <td>
                       <a href="{% url 'atualizar' docs.id %}"><button type="button" class="btn btn-info">Editar</button></a>
+
                       <a href="{% url 'deletar' docs.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
+
+                      <a href="/media/{{ docs.arquivo }}" ><button type="button" class="btn btn-primary">Download</button></a>
+            
                   </td>
                 </tr>
               {% empty %}
