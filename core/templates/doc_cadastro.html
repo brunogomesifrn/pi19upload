@@ -19,6 +19,7 @@
 
   <link href="{% static 'css/cor.css' %}" rel="stylesheet">
 
+
 </head>
 
 <body background="{% static ' ' %}" style="background-repeat: no-repeat; background-size:1500px;>
@@ -34,7 +35,7 @@
     <div class="row">
       <div class="col-lg-12 mb-12">
           
-        <form class="contact" method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
 
           <div class="control-group form-group">
@@ -67,14 +68,14 @@
 
           <div class="control-group form-group">
             <div class="controls">
-            <h4 class="corr">Tipo de documento: {{ form.tipo }} <a href="{% url 'tipo' %}"><button type="button" class="btn btn-info" style="width: 100px; height: 40px ">Cadastrar </button></a></p>
+            <h4 class="corr">Tipo de documento: {{ form.tipo }} <a href="{% url 'tipo' %}"><button type="button" class="btn btn-info" style="width: 90px; height: 40px; ">Cadastrar </button></a></p>
           <br />
             </h4>
             </div>
         
           <a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 140px; height: 40px">Voltar</button></a>
           
-          <button type="submit" class="btn btn-primary" id="sendMessageButton" style="width: 140px; height: 40px">Salvar</button>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton" style="width: 140px; height: 40px;">Salvar</button>
 
         </div>
         </form>
