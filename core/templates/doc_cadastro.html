@@ -23,14 +23,10 @@
 
 <body background="{% static ' ' %}" style="background-repeat: no-repeat; background-size:1500px;>
 
-  <!-- Page Content -->
-
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="corr"><img src="{% static 'aquatec.png' %}">   Cadastros de Documentos Online </h1>
-
-
 
    <hr />
 
@@ -38,7 +34,7 @@
     <div class="row">
       <div class="col-lg-12 mb-12">
           
-        <form method="POST" enctype="multipart/form-data">
+        <form class="contact" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
 
           <div class="control-group form-group">
