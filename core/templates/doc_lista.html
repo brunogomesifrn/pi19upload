@@ -65,7 +65,9 @@
 
                       <a href="{% url 'deletar' docs.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
 
-                      <a href="/media/{{ docs.arquivo }}" ><button type="button" class="btn btn-primary">Download</button></a>
+                      <a href="/media/{{ docs.arquivo }}" download><button type="button" class="btn btn-primary">Download</button></a>
+
+                      <a href="/media/{{ docs.arquivo }}"" target="_blank"><button type="button" class="btn btn-primary">Vizualizar</button></a>
             
                   </td>
                 </tr>
