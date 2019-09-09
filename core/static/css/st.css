@@ -47,3 +47,10 @@ h1 {
   border-radius: 0 2px 2px 0;
 
 }
+.btn{
+border: none;
+padding: 0 20px;
+text-transform: uppercase;
+font-weight: bold;
+border-radius: 30px;
+ }
