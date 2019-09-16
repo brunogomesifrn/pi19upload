@@ -7,11 +7,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+	
 def listar(request):
 	doc = Doc.objects.all()
-	contexto = {
-		'doc_listar': doc
-	}
+	search = request.GET.get('search')
+	if search:	
+		doc = doc.filter(nome__icontains=search)
+	contexto = {'doc_listar': doc}
 	return render(request, 'doc_lista.html', contexto)
 
 def cadastro(request):

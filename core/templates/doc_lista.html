@@ -36,7 +36,19 @@
           <p><a href="{% url 'cadastro' %}"><button type="button" class="btn btn-danger" style="width: 230px; height: 70px">Cadastrar Doc </button></a>
           <a href="{% url 'perfil' %}"><button type="button" class="btn btn-info" style="width: 230px; height: 70px">Perfil </button></a></p>
           <br />
-      
+
+            <!--div do campo de busca-->
+    <div class="row">
+       <div class="col-sm-12">
+          <form action="." method="GET" class="form-inline">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Busca" style="width: 50%">
+            <input type="submit" class="btn btn-info" style="margin-left: 10px; width: 10%" value="OK">
+          </form>
+        </div>  
+      </div>
+      <br/>
+
+
             <table class="table">
               <thead class="thead-dark">
                 <tr>
