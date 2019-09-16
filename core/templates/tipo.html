@@ -28,11 +28,11 @@
 
   </a><a href="{% url 'tipo_cadastrar' %}"><button type="button" class="btn btn-danger" style="width: 180px;-webkit-border-radius: 40px"> Cadastrar Categoria</button></a>
 </p>
-
+</br>
             <table class="table">
               <thead class="thead-dark">
                 <tr>
-                  <th scope="col">Tipos de documentos cadastrados</th>
+                  <th colspan="2">Tipos de documentos cadastrados</th>
                 </tr>
               </thead>
 
@@ -41,13 +41,14 @@
               {% for tipo in tipo_listar %}
                 <tr>
                   <th scope="row" class="bg-light">{{ tipo.nome }}</th>
-                  <td>
+                  <td class="bg-light">
                       <a href="{% url 'tipo_atualizar' tipo.id %}"><button type="button" class="btn btn-info">Editar</button></a>
+
                       <a href="{% url 'tipo_deletar' tipo.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
                   </td>
                 </tr>
               {% empty %}
-              <p>Não há nehum tipo cadastrado!</p>
+              <p>Não há nehum tipo de documento cadastrado!</p>
               {%endfor%}
 
               </tbody>
