@@ -6,8 +6,8 @@
 .container{
   position: relative;
   margin: 5% auto;
-  width: 600px;
-  height: 400px;
+  width: 800px;
+  height: 600px;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -16,41 +16,29 @@
 .cadastro {
   box-sizing: border-box;
   padding: 40px;
-  width: 300px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
 }
 
 h1 {
-  margin: 0 0 20px 0;
-  font-weight: 300;
+  margin: 0 1 10px 0;
   font-size: 28px;
 
 }
-.u{
+.a{
   color: black;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
  
 }
-
 .right {
   position: absolute;
   top: 0;
-
   right: 0;
   box-sizing: border-box;
-  padding: 40px;
   width: 300px;
   height: 400px;
   background-size: cover;
-  background-position: center;
   border-radius: 0 2px 2px 0;
 
 }
-.btn{
-border: none;
-padding: 0 20px;
-text-transform: uppercase;
-font-weight: bold;
-border-radius: 30px;
- }
