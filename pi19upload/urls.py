@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import listar, cadastro, deletar, atualizar
+from core.views import listar, cadastro, deletar, atualizar, area
 from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
 from django.conf import settings
 from django.conf.urls.static import static
@@ -38,6 +38,8 @@ urlpatterns = [
     path('tipo_atualizar/<int:id>/', tipo_atualizar, name='tipo_atualizar'),
     path('tipo_deletar/<int:id>/', tipo_deletar, name='tipo_deletar'),
 
+    #area
+    path('area/', area, name='area'),
 
     #OUTRA COISA
     path('', index, name='index'),

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Área</title>
+</head>
+<body>
+<body background="{% static 'ci.jpg' %}" style="background-repeat: no-repeat; background-size: 100%">
+
+<div class="container">
+	<a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 200px; height: 130px; -webkit-border-radius: 40px"><img src="{% static 'dow.png' %}" width="50px" height="50px">TODOS OS DOCS</button></a>
+	{% for tipo in tipo_listar %}
+
+	<a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 200px; height: 130px; -webkit-border-radius: 40px"><img src="{% static 'dow.png' %}">{{ tipo.nome }}</button></a>
+
+	{% empty %}
+	<p>Não há nehum tipo de documento cadastrado!</p>
+	{%endfor%}
+
+<div>
+</body>
+</html>

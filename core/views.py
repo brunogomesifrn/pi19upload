@@ -78,7 +78,11 @@ def tipo_deletar(request, id):
 	tipo.delete()
 	return redirect('tipo')
 
-#OUTRA COISA
+#Area
+def area(request):
+	return render(request, "area.html")
+
+#Login e cadastro
 
 def index(request):
 	return render(request, "index.html")
