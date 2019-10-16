@@ -80,7 +80,12 @@ def tipo_deletar(request, id):
 
 #Area
 def area(request):
-	return render(request, "area.html")
+	categoria = Tipo.objects.all()
+	contexto = {
+		'categorias': categoria
+	}
+	return render(request, 'area.html', contexto)
+
 
 #Login e cadastro
 
