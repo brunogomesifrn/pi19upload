@@ -123,7 +123,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = 'media'
 
-#OUTRA COISA
+#LOGIN
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'

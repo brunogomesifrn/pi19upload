@@ -20,7 +20,7 @@ from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
 from django.conf import settings
 from django.conf.urls.static import static
 
-#OUTRA COISA
+#LONGIN
 from core.views import index, perfil, registro, dados
 from django.contrib.auth import views as auth_views
 

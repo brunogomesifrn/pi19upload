@@ -8,7 +8,7 @@ class Tipo(models.Model):
 class Doc(models.Model):
 	nome = models.CharField('Nome', max_length=100)
 	data = models.DateTimeField('Data')
-	arquivo = models.FileField('Arquivo', upload_to='upload')
+	arquivo = models.FileField('Arquivo', upload_to='upload', null=True)
 	local = models.CharField('Local Físico', max_length=100)
 	remetente = models.CharField('Remetente', max_length=100)
 	tipo = models.ForeignKey(Tipo, on_delete=models.PROTECT)
