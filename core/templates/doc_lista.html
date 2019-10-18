@@ -19,13 +19,13 @@
 
 </head>
 
-<body>
+<body background="{% static 'PTT.jpg' %}" style="background-repeat: no-repeat; background-size: 100%">
 
   <!-- Page Content -->
   <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-12 mb-12"  style="font-weight: bolder"> <img src="{% static 'aquatec.png' %}"> Cadastro de documentos </h1>
+    <h1 class="mt-12 mb-12"  style="font-weight: bolder"> <img src="{% static 'aquatec.png' %}"></h1>
 
    <hr />
 
@@ -67,19 +67,22 @@
 
               {% for docs in doc_listar %}
                 <tr>
-                  <th scope="row" class="bg-info">{{ docs.nome }}</th>
-                  <td class="bg-info">{{ docs.data }}</td>
-                  <td class="bg-info"><p> <img src="/media/{{docs.arquivo}}" alt="arquivo" width="100px" height="100px"/></td>
-                  <td class="bg-info">{{ docs.tipo }}</td>
-                  <td class="bg-info">{{ docs.local }}</td>
-                   <th scope="row" class="bg-info">{{ docs.remetente }}</th>
-                  <td>
-                      <a href="{% url 'atualizar' docs.id %}"><button type="button" class="btn btn-info">Editar</button></a>
+                  <th scope="row" class="bg-light">{{ docs.nome }}</th>
+                  <td style="background-color: #DCDCDC">{{ docs.data }}</td>
+                  <td class="bg-light"><p> <img src="/media/{{docs.arquivo}}" alt="arquivo" width="100px" height="100px"/></td>
+                  <td style="background-color: #DCDCDC">{{ docs.tipo }}</td>
+                  <td class="bg-light">{{ docs.local }}</td>
+                   <th scope="row" style="background-color: #DCDCDC">{{ docs.remetente }}</th>
+                  <td class="bg-light">
+                  <p>
+                      <a href="{% url 'atualizar' docs.id %}"><img src="{% static 'editar.jpg' %}"  width="30px" height="30px"style="margin-right: 50px"></button></a>
 
-                      <a href="{% url 'deletar' docs.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
+                      <a href="{% url 'deletar' docs.id %}"><img src="{% static 'excluir.png' %}"  width="30px" height="30px"></a>
+                  </p>
+             
+                      <a href="/media/{{ docs.arquivo }}" download><img src="{% static 'do.jpg' %}" width="30px" height="30px" style="margin-right: 50px"></a>
 
-                    </br>
-                      <a href="/media/{{ docs.arquivo }}" download><img src="{% static 'do.jpg' %}" width="30px" height="30px">    </a>
+
 
                       <a href="/media/{{ docs.arquivo }}"" target="_blank"><img src="{% static 'dow.png' %}" width="30px" height="30px"></a></a>
             

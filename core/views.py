@@ -12,7 +12,7 @@ def listar(request):
 	doc = Doc.objects.all()
 	search = request.GET.get('search')
 	if search:	
-		doc = doc.filter(nome__icontains=search)
+		doc = doc.filter(nome__icontains=search) or doc.filter(local__icontains=search) or doc.filter(remetente__icontains=search) or doc.filter(data__icontains=search)
 	contexto = {'doc_listar': doc}
 	return render(request, 'doc_lista.html', contexto)
 
@@ -78,7 +78,16 @@ def tipo_deletar(request, id):
 	tipo.delete()
 	return redirect('tipo')
 
-#OUTRA COISA
+#Area
+def area(request):
+	categoria = Tipo.objects.all()
+	contexto = {
+		'categorias': categoria
+	}
+	return render(request, 'area.html', contexto)
+
+
+#Login e cadastro
 
 def index(request):
 	return render(request, "index.html")
