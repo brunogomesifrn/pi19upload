@@ -24,6 +24,7 @@
 
 	{% for categ in categorias %}
 	<a href="{% url 'doc' %}">
+
 		<button type="button" class="btn btn-info" style="width: 200px; height: 130px; -webkit-border-radius: 40px">
 			<img src="{% static 'dow.png' %}" width="50px" height="50px">{{ categ.nome }}
 		</button>
@@ -31,9 +32,17 @@
 	{% empty %}
 	<p>Não há nehum tipo de documento cadastrado!</p>
 	{%endfor%}
-
+<!--
 <div>
-
+    <div class="row">
+       <div class="col-sm-12">
+          <form action="." method="GET" class="form-inline">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Busca" style="width: 50%">
+            <input type="submit" class="btn btn-info" style="margin-left: 10px; width: 10%" value="OK">
+          </form>
+        </div>  
+      </div>
+-->
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 

@@ -86,6 +86,14 @@ def area(request):
 	}
 	return render(request, 'area.html', contexto)
 
+#def listar(request):
+#	doc = Doc.objects.all()
+#	search = request.GET.get('search')
+#	if search:	
+#		doc = doc.filter(nome__icontains=search) or doc.filter(local__icontains=search) or doc.filter(remetente__icontains=search) or doc.filter(data__icontains=search)
+#	contexto = {'doc_listar': doc}
+#	return render(request, 'doc_lista.html', contexto)
+
 
 #Login e cadastro
 
