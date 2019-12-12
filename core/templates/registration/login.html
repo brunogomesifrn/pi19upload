@@ -22,20 +22,17 @@
 
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container1">
 
    <hr />
 
   </br>
- 	 <form class="cadastro" method="post">
+ 	    <form class="cadastro" method="post">
     
-
-           <div class="col-lg-12 mb-12">
-           	{% csrf_token %}
+      {% csrf_token %}
 			<p class="u">USUÁRIO: {{ form.username }}</p>
 			<p class="u" >SENHA: {{ form.password }}</p>
-           <a href="{% url 'registro' %}"><button type="subtmit" class="btn btn-danger" style="width: 150px; height: 50px" margin="10px">LOGAR</button></a>
-     	   </div>
+      <a href="{% url 'registro' %}"><button type="subtmit" class="btn btn-danger" style="width: 150px; height: 50px" margin="10px">LOGAR</button></a>
      </form>
      <div class="right">
 <img src="{% static 'aquatec.png' %}">

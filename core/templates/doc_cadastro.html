@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static widget_tweaks %}
 <html lang="en">
 
 <head>
@@ -51,7 +51,7 @@
 
           <div class="control-group form-group">
             <div class="controls">
-           <h4 class="a">{{form.data.label}}: {{ form.data }}</h4>
+           <h4 class="a">{{form.data.label}}: {% render_field form.data placeholder="aaaa-mm-dd" %}</h4>
             </div>
           </div>
 
@@ -70,12 +70,18 @@
             <div class="controls">
             <h4 class="a">{{form.remetente.label}}: {{ form.remetente }}</h4>
             </div>
+          </div>
 
           <div class="control-group form-group">
             <div class="controls">
-            <h4 class="a">Tipo de documento: {{ form.tipo }} <a href="{% url 'tipo' %}"><button type="button" class="btn btn-info" style="width: 130px; height: 45px;  -webkit-border-radius: 40px">Cadastrar </button></a></p>
+            <h4 class="a"> Setor: {{ form.grupo }}</h4>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+            <h4 class="a">Categoria: {{ form.tipo }} <a href="{% url 'tipo' %}"><button type="button" class="btn btn-info" style="width: 130px; height: 45px;  -webkit-border-radius: 40px">Cadastrar </button></a></h4>
           <br />
-            </h4>
             </div>
         
           <a href="{% url 'doc' %}"><button type="button" class="btn btn-info" style="width: 140px; height: 40px; -webkit-border-radius: 40px">Voltar</button></a>
@@ -84,8 +90,6 @@
 
         </div>
         </form>
-    
-      </div>
       <div class="right">
 <img src="{% static 'aquatec.png' %}">
 </div>

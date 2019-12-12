@@ -34,6 +34,13 @@
      		 </div>
      		 </div>
 <hr/>
+    {% if user.is_superuser %}
+      <div class="row">
+            <div class="col-lg-12 mb-12">
+             <a href="{% url 'registro' %}"><button type="button" class="btn btn-info" style="width: 200px; height: 80px">CADASTRAR USUÁRIO</button></a>
+            </div>
+      </div><hr/>
+    {% endif %}
  	 <div class="row">
            <div class="col-lg-12 mb-12">
            <a href="{% url 'logout' %}"><button type="button" class="btn btn-warning" style="width: 200px; height: 80px">SAIR</button></a>

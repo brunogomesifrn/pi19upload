@@ -1,23 +1,23 @@
 from django.shortcuts import render, redirect
 from .models import Doc, Tipo
-from .forms import DocForm, TipoForm
+from .forms import DocForm, TipoForm, UsuarioForm
 
 #OUTRA COISA
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 	
 def listar(request):
-	doc = Doc.objects.all()
+	doc = Doc.objects.filter(grupo__in=request.user.groups.all())
 	search = request.GET.get('search')
 	if search:	
 		doc = doc.filter(nome__icontains=search) or doc.filter(local__icontains=search) or doc.filter(remetente__icontains=search) or doc.filter(data__icontains=search)
 	contexto = {'doc_listar': doc}
 	return render(request, 'doc_lista.html', contexto)
 
+@login_required
 def cadastro(request):
-	form = 	DocForm(request.POST or None, request.FILES or None)
+	form = 	DocForm(request.user, data=request.POST or None, files=request.FILES or None)
 	if form.is_valid():
 		form.save()
 		return redirect('doc')
@@ -29,7 +29,7 @@ def cadastro(request):
 
 def atualizar(request, id):
 	doc = Doc.objects.get(pk=id)
-	form = DocForm(request.POST or None, request.FILES or None, instance=doc)
+	form = DocForm(request.user, data=request.POST or None, files=request.FILES or None, instance=doc)
 	if form.is_valid():
 		form.save()
 		return redirect('doc')
@@ -86,13 +86,10 @@ def area(request):
 	}
 	return render(request, 'area.html', contexto)
 
-#def listar(request):
-#	doc = Doc.objects.all()
-#	search = request.GET.get('search')
-#	if search:	
-#		doc = doc.filter(nome__icontains=search) or doc.filter(local__icontains=search) or doc.filter(remetente__icontains=search) or doc.filter(data__icontains=search)
-#	contexto = {'doc_listar': doc}
-#	return render(request, 'doc_lista.html', contexto)
+def filtrar(request, categoria_id):
+	doc = Doc.objects.filter(tipo=categoria_id, grupo__in=request.user.groups.all())
+	contexto = {'doc_listar': doc}
+	return render(request, 'doc_lista.html', contexto)
 
 
 #Login e cadastro
@@ -105,9 +102,10 @@ def perfil(request):
 
 
 def registro(request):
-	form = UserCreationForm(request.POST or None)
+	form = UsuarioForm(request.POST or None)
 	if form.is_valid():
 		form.save()
+		form.save_m2m()
 		return redirect('login')
 	contexto = {
 		'form': form
@@ -117,7 +115,7 @@ def registro(request):
 @login_required
 def dados(request, id):
 	user = User.objects.get(pk=id)
-	form = UserCreationForm(request.POST or None, instance=user)
+	form = UsuarioForm(request.POST or None, instance=user)
 	if form.is_valid():
 		form.save()
 		return redirect('perfil')
@@ -125,6 +123,7 @@ def dados(request, id):
 		'form': form
 	}
 	return render(request, 'registro.html', contexto)
+
 
 
 
